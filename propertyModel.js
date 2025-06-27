@@ -8,7 +8,7 @@ const propertySchema = new mongoose.Schema({
   bedrooms: { type: Number },
   bathrooms: { type: Number },
   area: { type: Number },
-  type: { type: String },
+  type: { type: String, default: 'Book' },
   createdAt: { type: Date, default: Date.now }
 });
 

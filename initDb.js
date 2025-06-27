@@ -9,38 +9,25 @@ mongoose.connect(process.env.MONGODB_URI, {
 });
 
 async function initializeDb() {
-  // Create admin user
-  await User.create({
-    email: 'admin',
-    password: 'admin',
-    name: 'Admin User'
-  });
-
-  // Create sample properties
+  
   await Property.insertMany([
     {
-      title: 'Luxury Villa',
-      description: 'Beautiful villa with ocean view',
-      price: 1000000,
-      location: 'Miami Beach',
-      bedrooms: 4,
-      bathrooms: 3,
-      area: 3000,
-      type: 'Villa'
+      title: 'Classic Literature Collection',
+      description: 'A collection of timeless literary works by famous authors.',
+      price: 150,
+      location: 'Shelf A',
+      type: 'Book'
     },
     {
-      title: 'City Apartment',
-      description: 'Modern apartment in downtown',
-      price: 500000,
-      location: 'New York City',
-      bedrooms: 2,
-      bathrooms: 2,
-      area: 1200,
-      type: 'Apartment'
+      title: 'Modern Sci-Fi Adventures',
+      description: 'Explore new worlds and adventures in modern science fiction.',
+      price: 200,
+      location: 'Shelf B',
+      type: 'Book'
     }
   ]);
 
-  console.log('Database initialized with sample data');
+  console.log('Database initialized with sample books');
   process.exit(0);
 }
 
